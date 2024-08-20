@@ -13,17 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Setup the Flutter environment
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.10.0'  # Specify the Flutter version you need
+          flutter-version: '3.10.0'  # Adjust based on your needs
 
       - name: Install dependencies
         run: flutter pub get
-
-      # Uncomment this step to verify the use of 'flutter format' on each commit.
-      # - name: Verify formatting
-      #   run: flutter format --output=none --set-exit-if-changed .
 
       - name: Analyze project source
         run: flutter analyze
